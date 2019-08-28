@@ -1,0 +1,262 @@
+file 148033 1566999184                                          
+version 2
+run RIMac-0-20190828-16:26:23-17976
+attr configname RIMac
+attr datetime 20190828-16:26:23
+attr experiment RIMac
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network SensorNetworkShowcaseA
+attr processid 17976
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.wlan[*].mac.typename "\"RIMac\""
+param *.gateway.wlan[*].mac.slotDuration 320us
+param *.sensor*.wlan[*].mac.slotDuration 320us
+param **.wlan[*].mac.maxTransmissions 5
+param **.wlan[*].typename "\"WirelessInterface\""
+param **.wlan[*].radio.typename "\"UnitDiskRadio\""
+param **.wlan[*].radio.transmitter.communicationRange 180m
+param **.arp.typename "\"GlobalArp\""
+param *.gateway.forwarding true
+param *.configurator.addStaticRoutes false
+param *.configurator.config "xmldoc(\"config.xml\")"
+param **.radio.carrierFrequency 2.45GHz
+param **.radio.bandwidth 2.8MHz
+param **.radio.transmitter.bitrate "250000 bps"
+param **.radio.transmitter.headerLength 48b
+param **.radio.transmitter.preambleDuration 0.000192s
+param **.radio.transmitter.power 2.24mW
+param **.radio.receiver.energyDetection -90dBm
+param **.radio.receiver.sensitivity -100dBm
+param **.radio.receiver.snirThreshold -8dB
+param *.radioMedium.backgroundNoise.power -110dBm
+param **.mac.headerLength 8b
+param *.sensor*.numApps 1
+param *.sensor*.app[0].typename "\"UdpBasicApp\""
+param *.sensor*.app[0].destAddresses "\"server\""
+param *.sensor*.app[0].destPort 1000
+param *.sensor*.app[0].sendInterval exponential(1s)
+param *.sensor*.app[0].messageLength 10Byte
+param *.server.numApps 1
+param *.server.app[0].typename "\"UdpSink\""
+param *.server.app[0].localPort 1000
+param *.visualizer.*.routingTableVisualizer.displayRoutingTables false
+param *.visualizer.*.routingTableVisualizer.displayRoutesIndividually false
+param *.visualizer.*.routingTableVisualizer.lineShift 0
+param *.visualizer.*.routingTableVisualizer.displayLabels false
+param *.visualizer.*.infoVisualizer.modules "\"*.server.app[0]\""
+param *.visualizer.*.infoVisualizer.format "\"%t\""
+param *.visualizer.*.networkRouteVisualizer.displayRoutes true
+param *.visualizer.*.physicalLinkVisualizer.displayLinks true
+
+vector 0 SensorNetworkShowcaseA.gateway.energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 1 SensorNetworkShowcaseA.sensor1.energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 2 SensorNetworkShowcaseA.sensor2.energyStorage powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 3 SensorNetworkShowcaseA.gateway.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 4 SensorNetworkShowcaseA.gateway.wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 5 SensorNetworkShowcaseA.sensor1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 6 SensorNetworkShowcaseA.sensor1.wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 7 SensorNetworkShowcaseA.sensor2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 8 SensorNetworkShowcaseA.sensor2.wlan[0].radio.energyConsumer powerConsumption:vector ETV
+attr interpolationmode sample-hold
+attr source powerConsumptionChanged
+attr title "Power consumption, vector"
+vector 9 SensorNetworkShowcaseA.sensor2.energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 10 SensorNetworkShowcaseA.sensor2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 11 SensorNetworkShowcaseA.sensor2.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 12 SensorNetworkShowcaseA.gateway.energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 13 SensorNetworkShowcaseA.gateway.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 14 SensorNetworkShowcaseA.gateway.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 15 SensorNetworkShowcaseA.sensor1.energyStorage residualEnergyCapacity:vector ETV
+attr interpolationmode linear
+attr source residualEnergyCapacityChanged
+attr title "Residual energy capacity, vector"
+vector 16 SensorNetworkShowcaseA.sensor1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 17 SensorNetworkShowcaseA.sensor1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 18 SensorNetworkShowcaseA.sensor1.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 19 SensorNetworkShowcaseA.sensor1.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 20 SensorNetworkShowcaseA.sensor1.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 21 SensorNetworkShowcaseA.sensor2.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 22 SensorNetworkShowcaseA.sensor2.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 23 SensorNetworkShowcaseA.sensor2.wlan[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 24 SensorNetworkShowcaseA.sensor2.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 25 SensorNetworkShowcaseA.gateway.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 26 SensorNetworkShowcaseA.gateway.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 27 SensorNetworkShowcaseA.gateway.eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 28 SensorNetworkShowcaseA.gateway.eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 29 SensorNetworkShowcaseA.gateway.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 30 SensorNetworkShowcaseA.server.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 31 SensorNetworkShowcaseA.server.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 32 SensorNetworkShowcaseA.server.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 33 SensorNetworkShowcaseA.server.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 34 SensorNetworkShowcaseA.server.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 35 SensorNetworkShowcaseA.server.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 36 SensorNetworkShowcaseA.server.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 37 SensorNetworkShowcaseA.server.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 38 SensorNetworkShowcaseA.server.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 39 SensorNetworkShowcaseA.sensor1.wlan[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+0	10076 15021 0 1592 0 8.394662073879 582 0 0.075 5.233697 0.311150303417
+1	25097 12792 0 1575 0 8.394469528172 500 0 0.075 4.670725 0.273100003565
+2	37889 11674 0 1454 0 8.299171191761 460 0 0.075 4.200664 0.246000003244
+3	49563 2308 0 1579 0 8.394470073879 101 0 3 230 574
+4	51871 15013 0 1592 0 8.394662073879 581 0 0.075 5.233697 0.311150303417
+5	66884 1902 0 1575 0 8.394469528172 84 0 3 189 469
+6	68786 12784 0 1575 0 8.394469528172 499 0 0.075 4.670725 0.273100003565
+7	81570 1818 0 1454 0 8.299171191761 81 0 3 178 436
+8	83388 11666 0 1454 0 8.299171191761 459 0 0.075 4.200664 0.246000003244
+9	95054 6632 7 1454 0.297534605255 8.299171191761 161 -0.0035372882449218 -2.97534605255e-07 -0.27229558901187 0.00065326774769136
+10	101686 3308 7 1454 0.297534605255 8.299171191761 138 0 3 159 339
+11	104994 2880 9 1453 0.297854605255 8.298654605255 120 0 2 120 180
+12	107874 8193 21 1592 0.384381708223 8.394662073879 193 -0.0033144918401166 -3.84381708223e-07 -0.30260676552617 0.00065674847584724
+13	116067 4258 21 1579 0.384381708223 8.394470073879 175 0 3 203 419
+14	120325 3942 23 1592 0.384701708223 8.394662073879 162 0 2 163 245
+15	124267 7283 35 1574 0.437587209977 8.394469528172 172 -0.0041074372380959 -4.37587209977e-07 -0.32348769691826 0.00085467276420669
+16	131550 3605 35 1575 0.437587209977 8.394469528172 149 0 3 177 381
+17	135155 3192 37 1575 0.437907209977 8.394469528172 132 0 2 132 198
+18	138347 250 49 1438 0.787201139982 7.501316553776 10 10 10 100 1000
+19	138597 250 51 1439 0.787201139982 7.501316553776 10 18 18 180 3240
+20	138847 486 53 1568 0.787201139982 8.392645528172 20 0 4 44 114
+21	139333 200 58 1456 1.038159300664 8.340915299804 8 10 10 80 800
+22	139533 201 60 1457 1.038159300664 8.340915299804 8 18 18 144 2592
+23	139734 362 62 1459 1.038159300664 8.340915299804 15 0 2 12 16
+24	140096 260 79 1220 1.299171191761 7.299171191761 7 0.261011891097 1.458810966609 5.873950110994 6.0908437165217
+25	140356 433 105 1580 1.387134244529 8.394470073879 17 38 38 646 24548
+26	140789 433 106 1581 1.387134244529 8.394470073879 17 56 56 952 53312
+27	141222 832 106 1581 1.387134244529 8.394470073879 34 0 1 17 17
+28	142054 416 106 1581 1.387134244529 8.394470073879 17 0 0 0 0
+29	142470 433 108 1583 1.387140004529 8.394475833879 17 64 64 1088 69632
+30	142903 433 109 1584 1.387140054529 8.394475883879 17 64 64 1088 69632
+31	143336 433 109 1584 1.387140054529 8.394475883879 17 64 64 1088 69632
+32	143769 433 110 1585 1.387140054529 8.394475883879 17 46 46 782 35972
+33	144202 433 112 1587 1.387140054529 8.394475883879 17 18 18 306 5508
+34	144635 424 112 1587 1.387140054529 8.394475883879 17 1 17 153 1785
+35	145059 433 113 1588 1.387140054529 8.394475883879 17 10 10 170 1700
+36	145492 1114 113 1492 0.1 8.3 83 0 1600 10400 13440000
+37	146606 634 113 1588 1.387140054529 8.394475883879 17 0.348980753865 3.7803072436 32.793720604748 83.374813884707
+38	147240 416 113 1588 1.387140054529 8.394475883879 17 0 9 66 376
+39	147656 376 142 1568 1.439223796483 8.392645528172 10 0.652022656501 2.934845842616 19.493549362643 43.239609218449
+
